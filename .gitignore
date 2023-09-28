@@ -3,3 +3,33 @@
 
 # Ignore Gradle build output directory
 build
+
+# Ignore IntelliJ IDEA project-specific settings directory
+.idea
+
+# Ignore Visual Studio Code project-specific settings directory
+.vscode
+
+# Ignore Android Studio project-specific settings directory
+*.iml
+
+# Ignore Gradle wrapper jar file
+gradle/wrapper/gradle-wrapper.jar
+
+# Ignore Gradle wrapper properties file
+gradle/wrapper/gradle-wrapper.properties
+
+# Ignore Android Studio generated files
+*.apk
+*.ap_
+*.aab
+
+# Ignore Android generated files
+*.hprof
+
+# Ignore Windows generated files
+Thumbs.db
+ehthumbs.db
+
+# Ignore macOS generated files
+.DS_Store

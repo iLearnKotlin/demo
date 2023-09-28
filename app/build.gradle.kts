@@ -17,9 +17,22 @@ plugins {
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+    // Declaring a custom repository by URL @see [link](https://docs.gradle.org/current/userguide/declaring_repositories.html#sec:declaring_custom_repository)
+    maven {
+        url = uri("https://repo.spring.io/release")
+    }
+    maven {
+        url = uri("https://repository.jboss.org/maven2")
+    }
 }
 
 dependencies {
+    // Use the Kotlin JUnit 5 integration.
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.5.31")
+    // Use the JUnit 5 integration.
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    // Use JUnit Platform Launcher.
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     // This dependency is used by the application.
     implementation("com.google.guava:guava:32.1.1-jre")
 }
@@ -44,4 +57,8 @@ java {
 application {
     // Define the main class for the application.
     mainClass.set("demo.AppKt")
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform() 
 }
